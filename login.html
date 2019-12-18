@@ -1,63 +1,65 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
-    <meta charset="utf-8" />
+  <title>BCIT Memos | Template</title>
+  <!-- ! DO NOT REMOVE ! -->
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Mobile Responsiveness -->
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <!-- Title for Website -->
-    <title>Personal Project</title>
+  <!-- Firebase Scripts -->
+  <!-- Firebase SDKs -->
+  <!-- ! DO NOT REMOVE ! -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
 
-    <!-- Bootstrap Resources -->
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
-    <!-- Bootstrap Javascripts -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
-    </script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-    </script>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
 
-    <!-- Local index stylesheet -->
-    <link type="text/css" rel="stylesheet" href="styles/index.css" />
+  <script src="scripts/init-firebase.js"></script>
+  <script src="scripts/firebase-ui-config.js"></script>
+  <!-- ? OTHER FILES -->
+  <!-- JavaScript -->
 
-    <!-- Firebase Stuff -->
-    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-app.js"></script>
-
-    <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-analytics.js"></script>
-
-    <!-- Add Firebase products that you want to use -->
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/7.6.0/firebase-firestore.js"></script>
+  <!-- CSS -->
+  <!-- <link rel="stylesheet" href="../styles/main.css"> -->
 </head>
 
 <body>
-    
-    <script>
-        var firebaseConfig = {
-            apiKey: "api-key",
-            authDomain: "project-id.firebaseapp.com",
-            databaseURL: "https://project-id.firebaseio.com",
-            projectId: "project-id",
-            storageBucket: "project-id.appspot.com",
-            messagingSenderId: "sender-id",
-            appId: "app-id",
-            measurementId: "G-measurement-id",
-        };
+  <header>
+    header where all the first info goes
+  </header>
+  <div id="content">
+    content goes heres
+  </div>
+  <footer>
+    im in the footer
+  </footer>
 
-        // Initialize Firebase
-        firebase.initializeApp(firebaseConfig);
-    </script>
+  <!-- Optional JavaScript -->
+
+
+
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- ! DO NOT REMOVE ! -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
 </body>
 
 </html>
