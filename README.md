@@ -6,7 +6,7 @@ We as students find it hard asking our friends of how they saw the lesson so we 
 <b>Features</b>
 - document database system
 - Private social media platform restricted to BCIT students where they can share notes/learning resources with their peers.
-- Study repository\n
+- Study repository
 	- Core features:
 			- Subscribe [ get notified for threads ] feature
 			- Post various learning resources
