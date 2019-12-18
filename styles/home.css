@@ -1,0 +1,12 @@
+/* ------------HOME CSS------------ */
+
+/* Similarities for #content and footer */
+#content, footer {
+    display: inline-block;
+}
+
+/* Unique for #content */
+#content {
+    width: 60%;
+    text-align: center;
+}

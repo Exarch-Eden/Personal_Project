@@ -1,0 +1,42 @@
+/* ------------UNIVERSAL CSS------------ */
+
+/* Body */
+body {
+    margin: 0 auto;
+    height: 100vh;
+}
+
+/* ------------Content within Nav Bar------------ */
+/* Side Nav Bar */
+nav {
+    color: white;
+    float: left;
+    width: 80px;
+    height: 100%;
+    background-color: #0E2167;
+    /* display: flex;
+    justify-content: center; */
+    text-align: center;
+}
+
+/* For all icon divs */
+.icon {
+    width: 50px;
+    height: 50px;
+    background-color: gray;
+    /* Margin order: top, right, bottom, left */
+    margin: 20px auto 20px auto;
+}
+
+/* Unique for #profPic */
+#profPic {
+    border-radius: 50%;
+}
+
+/* Unique for #setting div */
+#setting div {
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+}
+/* --------------------------------------------- */
