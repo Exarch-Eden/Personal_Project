@@ -19,6 +19,13 @@ nav {
     text-align: center;
 }
 
+/* Nav Bar Line Divider (Between #profPic and the other icons) */
+#navDivider {
+    border: 1px solid white;
+    width: 100%;
+    height: 1px;
+}
+
 /* For all icon divs */
 .icon {
     width: 50px;
