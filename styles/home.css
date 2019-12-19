@@ -1,10 +1,5 @@
 /* ------------HOME CSS------------ */
 
-/* Body (exclusive to Home) */
-body {
-    text-align: center;
-}
-
 /* Unique for #content */
 #content {
     display: inline-block;
