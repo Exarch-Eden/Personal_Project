@@ -52,3 +52,10 @@ body {
 .sampleIcon:hover {
     background-color: cornflowerblue;
 }
+
+/* Settings */
+
+.settings{
+    position: absolute;
+    bottom: 1vh;
+}
