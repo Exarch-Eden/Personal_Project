@@ -2,48 +2,53 @@
 
 /* Body */
 body {
-    margin: 0 auto;
+}
+
+/* Side Bar */
+#sidebar {
+    width: 10vh;
     height: 100vh;
-}
-
-/* ------------Content within Nav Bar------------ */
-/* Side Nav Bar */
-nav {
-    color: white;
-    float: left;
-    width: 80px;
-    height: 100%;
+    padding: 0 1vh 0 1vh;
+    position: sticky;
+    display: block;
+    overflow: hidden;
+    top: 0;
+    left: 0;
     background-color: #0E2167;
-    /* display: flex;
-    justify-content: center; */
-    text-align: center;
+    grid-column: 1;
 }
 
-/* Nav Bar Line Divider (Between #profPic and the other icons) */
-#navDivider {
-    border: 1px solid white;
-    width: 100%;
-    height: 1px;
+/* Profile Icon */
+.sidebarItem {
+    position: relative;
+    padding: 1vh;
 }
 
-/* For all icon divs */
-.icon {
-    width: 50px;
-    height: 50px;
-    background-color: gray;
-    /* Margin order: top, right, bottom, left */
-    margin: 20px auto 20px auto;
+.profItem {
+    border-bottom: 5px solid white;
+    
 }
 
-/* Unique for #profPic */
-#profPic {
+#profIcon {
+    background-color: cadetblue;
+    width: 8vh;
+    height: 8vh;
     border-radius: 50%;
+    float: left;
 }
 
-/* Unique for #setting div */
-#setting div {
-    position: absolute;
-    bottom: 0;
-    left: 15px;
+#profIcon:hover {
+    background-color: cornflowerblue;
 }
-/* --------------------------------------------- */
+
+/* Other Icons */
+.sampleIcon {
+    background-color: cadetblue;
+    width: 8vh;
+    height: 8vh;
+    border-radius: 10%;
+}
+
+.sampleIcon:hover {
+    background-color: cornflowerblue;
+}

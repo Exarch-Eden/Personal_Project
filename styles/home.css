@@ -3,10 +3,14 @@
 /* Body (exclusive to Home) */
 body {
     text-align: center;
+    display: grid;
 }
 
 /* Unique for #content */
 #content {
-    display: inline-block;
-    width: 60%;
+    width: 88vw;
+    height: 200vh;
+    background-color: aqua;
+    grid-column: 2;
 }
+
