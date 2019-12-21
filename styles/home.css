@@ -2,15 +2,27 @@
 
 /* Body (exclusive to Home) */
 body {
-    text-align: center;
-    display: grid;
+    display: flex;
 }
 
 /* Unique for #content */
 #content {
-    width: 88vw;
-    height: 200vh;
+    width: 100%;
+    height: auto;
     background-color: aqua;
-    grid-column: 2;
+    /* grid-column: 2; */
 }
 
+#headerCont{
+    background-color: #8ca1fd;
+    text-align: center;
+    padding: 1vh 0 1vh 0;
+    font-size: 2vh;
+    position: sticky;
+    z-index: 1;
+    top:0;
+}
+
+#mainContent{
+    background-color: aquamarine;
+}
