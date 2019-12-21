@@ -6,7 +6,7 @@ body {
 
 /* Side Bar */
 #sidebar {
-    width: 10vh;
+    width: 6vh;
     height: 100vh;
     padding: 0 1vh 0 1vh;
     position: sticky;
@@ -31,8 +31,8 @@ body {
 
 #profIcon {
     background-color: cadetblue;
-    width: 8vh;
-    height: 8vh;
+    width: 4vh;
+    height: 4vh;
     border-radius: 50%;
     float: left;
 }
@@ -44,8 +44,8 @@ body {
 /* Other Icons */
 .sampleIcon {
     background-color: cadetblue;
-    width: 8vh;
-    height: 8vh;
+    width: 4vh;
+    height: 4vh;
     border-radius: 10%;
 }
 
