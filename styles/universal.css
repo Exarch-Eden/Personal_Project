@@ -2,11 +2,21 @@
 
 /* Body */
 body {
+    display: flex;
+}
+
+/* The content div */
+#content {
+    width: 100%;
+    height: auto;
+    background-color: aqua;
+    /* grid-column: 2; */
 }
 
 /* Side Bar */
 #sidebar {
-    width: 6vh;
+    /* 13.2vh == 100px */
+    width: 10vh;
     height: 100vh;
     padding: 0 1vh 0 1vh;
     position: sticky;
@@ -18,6 +28,13 @@ body {
     grid-column: 1;
 }
 
+/* Width and height for icons */
+#profIcon, .sampleIcon {
+    /* 6.6vh == 50px */
+    width: 6.6vh;
+    height: 6.6vh;
+}
+
 /* Profile Icon */
 .sidebarItem {
     position: relative;
@@ -25,14 +42,11 @@ body {
 }
 
 .profItem {
-    border-bottom: 5px solid white;
-    
+    border-bottom: 3px solid white;
 }
 
 #profIcon {
     background-color: cadetblue;
-    width: 4vh;
-    height: 4vh;
     border-radius: 50%;
     float: left;
 }
@@ -44,8 +58,6 @@ body {
 /* Other Icons */
 .sampleIcon {
     background-color: cadetblue;
-    width: 4vh;
-    height: 4vh;
     border-radius: 10%;
 }
 
@@ -54,7 +66,6 @@ body {
 }
 
 /* Settings */
-
 .settings{
     position: absolute;
     bottom: 1vh;

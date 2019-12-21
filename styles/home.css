@@ -1,18 +1,6 @@
 /* ------------HOME CSS------------ */
 
-/* Body (exclusive to Home) */
-body {
-    display: flex;
-}
-
-/* Unique for #content */
-#content {
-    width: 100%;
-    height: auto;
-    background-color: aqua;
-    /* grid-column: 2; */
-}
-
+/* Content Header */
 #headerCont{
     background-color: #8ca1fd;
     text-align: center;
@@ -25,4 +13,5 @@ body {
 
 #mainContent{
     background-color: aquamarine;
+    padding : 2vw;
 }

@@ -1,2 +1,15 @@
 /* ------------NOTES CSS------------ */
 
+/* Unique for #content */
+#content {
+    text-align: center;
+}
+
+/* Form Label */
+label {
+    float: left;
+}
+
+label[for="bodyInput"] {
+    padding-top: 10px;
+}

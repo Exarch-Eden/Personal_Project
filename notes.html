@@ -16,40 +16,96 @@
   <!-- JavaScript -->
 
   <!-- Local CSS -->
+  <link rel="stylesheet" href="styles/notes.css">
   <link rel="stylesheet" href="styles/universal.css">
 </head>
 
 <body>
-    <!-- Side Nav Bar -->
-  <nav>
-    <!-- The divs are for testing purposes only. Switch to img elements when the finalized
-       icons are finished -->
-    <a><div id="profPic" class="icon"></div></a> <!-- Profile Picture Icon -->
-    <div id="navDivider"></div> <!-- Line Divider -->
-    <a><div class="icon"></div></a> <!-- Home Icon -->
-    <a><div class="icon"></div></a> <!-- Thread Icon -->
-    <a><div class="icon"></div></a> <!-- Notes Icon -->
-    <a id="setting"><div class="icon"></div></a> <!-- Setting Icon -->
-  </nav>
-  <div id="content">
-    content goes heres
+  <!-- Side Nav Bar -->
+  <div id="sidebar">
+    <nav class="nav justify-content-center">
+      <!-- Profile Icon -->
+      <a id="profItem" class="nav-link sidebarItem profItem" href="#">
+        <div id="profIcon"></div>
+      </a>
+      <!-- Home Icon -->
+      <a id="homeItem" class="nav-link sidebarItem" href="#">
+        <div class="sampleIcon"></div>
+      </a>
+      <!-- Threads Icon -->
+      <a id="threadItem" class="nav-link sidebarItem" href="#">
+        <div class="sampleIcon"></div>
+      </a>
+      <!-- Notes Icon -->
+      <a id="noteItem" class="nav-link sidebarItem" href="#">
+        <div class="sampleIcon"></div>
+      </a>
+      <!-- Settings Icon -->
+      <a id="settingsItem" class="nav-link sidebarItem settings" href="#">
+        <div class="sampleIcon"></div>
+      </a>
+    </nav>
   </div>
-  <footer>
-    im in the footer
-  </footer>
+
+  <!-- Content -->
+  <div id="content">
+    <div id="mainContent">
+
+      <!-- Button trigger modal -->
+      <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#modelId">
+        Create New Post
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Post Creation</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Insert Form Inputs Here... -->
+              <div class="container-fluid">
+                <div class="form-group">
+                  <!-- Post Header Input -->
+                  <label for="headerInput">Header</label>
+                  <input type="text" class="form-control" name="text" id="headerInput" aria-describedby="helpId"
+                    placeholder="">
+                  <!-- <small id="helpId" class="form-text text-muted">Help text</small> -->
+                  <!-- Post Text Body Input -->
+                  <label for="bodyInput">Body</label>
+                  <textarea class="form-control" name="text" id="bodyInput" rows="3"></textarea>
+                </div>
+              </div>
+              <!-- End of Form -->
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <!-- Implement javascript for the post button to write to firebase -->
+              <button type="button" class="btn btn-primary">Post</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- ! DO NOT REMOVE ! -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+  </script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+  </script>
 </body>
 
 </html>
