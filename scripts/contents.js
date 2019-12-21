@@ -1,68 +1,89 @@
-var contents = $("#content");
+var contents = $("#mainContent");
+var headerCon = $("#headerCont");
+function include(file) {
 
-function include(file) { 
-  
-    var script  = document.createElement('script'); 
-    script.src  = file; 
-    script.type = 'text/javascript'; 
-    script.defer = true; 
-    
-    document.getElementsByTagName('body').item(0).appendChild(script); 
-    
-} 
+    var script = document.createElement('script');
+    script.src = file;
+    script.type = 'text/javascript';
+    script.defer = true;
+
+    document.getElementsByTagName('body').item(0).appendChild(script);
+
+}
+
 
 // page format data
 include("scripts/data.js");
-
+include("scripts/home.js");
 
 // navigation click events
 function goToProfile() {
     console.log("profile clicked");
-    
+    headerCon.html("Profile");
+    contents.empty();
 }
 
 function goToHome() {
     console.log("home clicked");
+    headerCon.html("Home");
+    contents.empty();
+    for (var i = 0; i < testHomeData.length; i++) {
+        var template = "<div class='card'>\
+    <div class='card-body'>\
+      <!-- title of thread -->\
+      <h4 class='card-title'>" + testHomeData[i]["title"] + "</h4>\
+      <!-- posted by ... -->\
+      <h6 class='card-subtitle text-muted'>Posted by " + testHomeData[i]["threadUser"] + "</h6>\
+      <!-- content of thread -->\
+      <p class='card-text'>" + testHomeData[i]["threadInfo"] + "</p>\
+    </div>\
+  </div>"
+        contents.append(template);
+    }
 }
 
 function goToThreads() {
     console.log("threads clicked");
-    
+    headerCon.html("Threads");
+    contents.empty();
 }
 
 function goToNotes() {
     console.log("notes clicked");
-    
+    headerCon.html("Notes");
+    contents.empty();
 }
 
 function goToSettings() {
     console.log("settings clicked");
-    
+    headerCon.html("Settings");
+    contents.empty();
 }
 
 // add click events to navigation buttons
 
 // PROFILE
-$("#profItem").click(function() {
+$("#profItem").click(function () {
     goToProfile();
 });
 
 // HOME
-$("#homeItem").click(function() {
+$("#homeItem").click(function () {
     goToHome();
 });
 
 // THREAD
-$("#threadItem").click(function() {
+$("#threadItem").click(function () {
     goToThreads();
 });
 
 // NOTES
-$("#noteItem").click(function() {
+$("#noteItem").click(function () {
     goToNotes();
 });
 
 // SETTINGS
-$("#settingsItem").click(function() {
+$("#settingsItem").click(function () {
     goToSettings();
 });
+
