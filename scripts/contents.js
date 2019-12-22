@@ -30,14 +30,14 @@ function goToHome() {
     for (var i = 0; i < testHomeData.length; i++) {
         var template = "<div class='card'>\
     <div class='card-body'>\
-      <!-- title of thread -->\
-      <h4 class='card-title'>" + testHomeData[i]["title"] + "</h4>\
-      <!-- posted by ... -->\
-      <h6 class='card-subtitle text-muted'>Posted by " + testHomeData[i]["threadUser"] + "</h6>\
-      <!-- content of thread -->\
-      <p class='card-text'>" + testHomeData[i]["threadInfo"] + "</p>\
-    </div>\
-  </div>"
+        <!-- title of thread -->\
+        <h5 class='card-title'>" + testHomeData[i]["title"] + "</h5>\
+        <!-- posted by ... -->\
+        <h6 class='card-subtitle text-muted'>Posted by " + testHomeData[i]["threadUser"] + "</h6>\
+        <!-- content of thread -->\
+        <p class='card-text'>" + testHomeData[i]["threadInfo"] + "</p>\
+        </div>\
+    </div>"
         contents.append(template);
     }
 }
