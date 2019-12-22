@@ -16,7 +16,7 @@ body {
 /* Side Bar */
 #sidebar {
     /* 13.2vh == 100px */
-    width: 10vh;
+    width: 8.6vh;
     height: 100vh;
     padding: 0 1vh 0 1vh;
     position: sticky;
@@ -32,23 +32,25 @@ body {
 #profIcon, .sampleIcon {
     /* 6.6vh == 50px */
     width: 6.6vh;
-    height: 6.6vh;
+    height: 6.6vh;   
 }
 
 /* Profile Icon */
 .sidebarItem {
     position: relative;
     padding: 1vh;
+    clear: right;
 }
 
-.profItem {
+#profItem {
     border-bottom: 3px solid white;
 }
 
 #profIcon {
     background-color: cadetblue;
     border-radius: 50%;
-    float: left;
+    width: 6.6vh;
+    height: 6.6vh;
 }
 
 #profIcon:hover {
@@ -66,7 +68,7 @@ body {
 }
 
 /* Settings */
-.settings{
+#settingsItem{
     position: absolute;
     bottom: 1vh;
 }
