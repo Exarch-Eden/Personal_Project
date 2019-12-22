@@ -27,6 +27,8 @@ function goToHome() {
     console.log("home clicked");
     headerCon.html("Home");
     contents.empty();
+    console.log(testHomeData);
+    
     for (var i = 0; i < testHomeData.length; i++) {
         var template = "<div class='card'>\
     <div class='card-body'>\
