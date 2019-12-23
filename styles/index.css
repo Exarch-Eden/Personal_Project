@@ -1,0 +1,71 @@
+/* global modifiers */
+a {
+    text-decoration: none;
+}
+
+/* Main containers */
+header {
+    height: 6vh;
+    display: flex;
+    /* background-color: #1133ca; */
+    background-color: #425ac7;
+    justify-content: center;
+}
+
+footer {
+    height: 5vh;
+}
+
+#content {
+    height: 100vh;
+    background-color: #425ac7;
+}
+
+/* subcontainers */
+
+/* header */
+#headCont {
+    width: 80vw;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    padding: 0 1vw 0 1vw;
+    border-bottom: 0.2vh solid #bbbbbb;
+}
+
+#homeTitle {
+    font-size: 4vh;
+}
+
+#homeLogin {
+    margin-left: auto;
+    font-size: 3vh;
+    padding: 0.3vh 0.5vw 0.3vh 0.5vw;
+    border: 0.2vh solid whitesmoke;
+    border-radius: 15%;
+}
+
+/* content */
+#mainCaroCont {
+}
+
+#signUpBtn {
+    z-index: 3;
+    display: flex;
+    position: absolute;
+    align-items: center;
+    justify-content: center;
+}
+
+#carouselCont > div img{
+    width: inherit;
+}
+
+/* colors */
+.white-color {
+    color: rgb(214, 214, 214);
+}
+
+.yellow-color {
+    color: rgb(218, 218, 25);
+}
