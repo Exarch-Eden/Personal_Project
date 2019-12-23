@@ -1,19 +1,15 @@
+// home.js
+// version 0.0.1
 
-// var testHomeData = [
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'K Milan', threadInfo: 'All hope is lost' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' },
-//     { title: 'Thread Title', datePosted: 'Posted 7 days ago', threadUser: 'Jon Dork', threadInfo: 'Some thread info here' }
-// ];
-
-var testHomeData = [];
-
+var homeData = [];
+var threadsData = [];
+/*
+    get a thread from a certain user
+    - userID to get the user who owns the thread
+    - threadID to get the specific thread from the user
+ */
 function getThreadFromUser(userID, threadID) {
-    
+
 
     var userData = db.collection("user").doc(userID);
     var threadData = userData.collection("threads").doc(threadID);
@@ -42,7 +38,7 @@ function getThreadFromUser(userID, threadID) {
             data.title = doc.data().threadTitle;
             data.datePosted = doc.data().datePosted;
             data.threadInfo = doc.data().threadInfo;
-            for(let i = 0; i < doc.data().posts; i++){
+            for (let i = 0; i < doc.data().posts; i++) {
                 data.posts.push(doc.data().posts[i]);
             }
         } else {
@@ -55,10 +51,10 @@ function getThreadFromUser(userID, threadID) {
 
 function getPostFromUser(userID, postID) {
     var userData = db.collection("user").doc(userID);
-    var postData = userData.collection("posts").doc(threadID);
+    var postData = userData.collection("posts").doc(postID);
 
     console.log(userData, " sent");
-    console.log(threadData, " sent");
+    console.log(postData, " sent");
     var data = {
         postUser: "",
         postInfo: ""
@@ -85,23 +81,59 @@ function getPostFromUser(userID, postID) {
     return data;
 }
 
+// presets the current 100 posts
 function getRecentThreads() {
     var now = new Date();
     console.log("date now is " + now);
     var nowTime = now.getTime();
     console.log("time now is " + nowTime);
 
+    homeData = [];
+
     firebase.auth().onAuthStateChanged(function (user) {
         db.collection('recent_threads').get().then(function (querySnapshot) {
             querySnapshot.forEach(function (doc) {
                 console.log(doc.id, "=> ", doc.data());
                 var data = getThreadFromUser(doc.data().postedBy, doc.data().threadInfo);
-                testHomeData.push(data);
+                homeData.push(data);
             })
         });
     })
 }
 
-$(document).ready(function() {
+// gets threads from the user's subscriptions
+function getSubscribedThreads() {
+    firebase.auth().onAuthStateChanged(function (user) {
+        if (user) {
+            var userData = db.collection("user").doc(user.uid);
+            var subscriptions = [];
+
+            userData.get().then(function (doc) {
+                if (doc.exists) {
+                    console.log('document data: ', doc.data());
+                    if (doc.data().subscriptions > 0) {
+                        for (let i = 0; i < doc.data().subscriptions; i++) {
+                            subscriptions[i] = doc.data().subscriptions[i];
+                        }
+                    } else {
+                        console.log('no current subscriptions');   
+                    }
+                } else {
+                    console.log('document does not exist');
+                }
+            }).catch(function(error) {
+                console.log("error getting document:", error);
+            });
+
+
+        } else {
+            console.log("no user logged in");
+            alert("No user is logged in. Please login to access you subscriptions.");
+        }
+
+    })
+}
+
+$(document).ready(function () {
     getRecentThreads();
 })

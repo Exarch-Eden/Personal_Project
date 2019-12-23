@@ -27,27 +27,29 @@ function goToHome() {
     console.log("home clicked");
     headerCon.html("Home");
     contents.empty();
-    console.log(testHomeData);
+    console.log(homeData);
     
-    for (var i = 0; i < testHomeData.length; i++) {
+    for (var i = 0; i < homeData.length; i++) {
         var template = "<div class='card'>\
     <div class='card-body'>\
         <!-- title of thread -->\
-        <h5 class='card-title'>" + testHomeData[i]["title"] + "</h5>\
+        <h5 class='card-title'>" + homeData[i]["title"] + "</h5>\
         <!-- posted by ... -->\
-        <h6 class='card-subtitle text-muted'>Posted by " + testHomeData[i]["threadUser"] + "</h6>\
+        <h6 class='card-subtitle text-muted'>Posted by " + homeData[i]["threadUser"] + "</h6>\
         <!-- content of thread -->\
-        <p class='card-text'>" + testHomeData[i]["threadInfo"] + "</p>\
+        <p class='card-text'>" + homeData[i]["threadInfo"] + "</p>\
         </div>\
     </div>"
         contents.append(template);
     }
+    getRecentThreads;
 }
 
 function goToThreads() {
     console.log("threads clicked");
     headerCon.html("Threads");
     contents.empty();
+    getSubscribedThreads();
 }
 
 function goToNotes() {
