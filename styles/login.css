@@ -1,0 +1,15 @@
+#loginCont {
+    height: 94vh;
+    width: 100%;
+    background-color: #0E2167;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+#formCont {
+    background-color: white;
+    width: 400px;
+    display: inline;
+}
+

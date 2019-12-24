@@ -8,7 +8,8 @@ header {
     height: 6vh;
     display: flex;
     /* background-color: #1133ca; */
-    background-color: #425ac7;
+    /* background-color: #425ac7; */
+    background-color: #0E2167;
     justify-content: center;
 }
 
@@ -17,8 +18,9 @@ footer {
 }
 
 #content {
-    height: 100vh;
-    background-color: #425ac7;
+
+    background-color: #0E2167;
+
 }
 
 /* subcontainers */
@@ -47,18 +49,27 @@ footer {
 
 /* content */
 #mainCaroCont {
+    height: 94vh;
+    padding: 2vh 0;
+    background-color: #0E2167;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
 }
 
 #signUpBtn {
     z-index: 3;
+    width: auto;
     display: flex;
-    position: absolute;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
-#carouselCont > div img{
-    width: inherit;
+#signUpBtn a {
+    padding: 1vh 1vw;
+    color : white;
+    text-decoration: none;
 }
 
 /* colors */

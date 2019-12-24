@@ -31,21 +31,35 @@
   <!-- JavaScript -->
 
   <!-- CSS -->
-  <!-- <link rel="stylesheet" href="../styles/login.css"> -->
+  <link rel="stylesheet" href="styles/layout1.css">
+  <link rel="stylesheet" href="styles/login.css">
 </head>
 
 <body>
   <header>
-    header where all the first info goes
+    <div id="headCont">
+      <a id="homeTitle" href="index.html">
+        <div id="title">
+          <span class="white-color">BCIT</span><span class="yellow-color">memos</span>
+        </div>
+      </a>
+    </div>
   </header>
   <div id="content">
-    
+    <div id="loginCont">
+      <div id="formCont" >
+        <input type="email" class="form-control" name="emailField" id="emailField" aria-describedby="emailHelpId" placeholder="email">
+        <input type="password" class="form-control" name="passwordField" id="passwordField" aria-describedby="passwordHelpId" placeholder="password">
+        <small id="loginHelp" class="form-text text-muted"></small>
+        <button onclick="login()">Login</button>
+      </div>
+    </div>
   </div>
-  <footer>
-    im in the footer
-  </footer>
+  <!-- <footer>
+  </footer> -->
 
   <!-- Optional JavaScript -->
+  <script src="scripts/login.js"></script>
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- ! DO NOT REMOVE ! -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
