@@ -15,6 +15,7 @@ function include(file) {
 // page format data
 include("scripts/data.js");
 include("scripts/home.js");
+include("scripts/notes.js");
 
 // navigation click events
 function goToProfile() {
@@ -56,6 +57,11 @@ function goToNotes() {
     console.log("notes clicked");
     headerCon.html("Notes");
     contents.empty();
+
+    //add code here to show notes posted by the user
+
+    //code to show the post creation modal
+    showModal();
 }
 
 function goToSettings() {
