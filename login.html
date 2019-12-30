@@ -47,19 +47,27 @@
   </header>
   <div id="content">
     <div id="loginCont">
-      <div id="formCont" >
-        <input type="email" class="form-control" name="emailField" id="emailField" aria-describedby="emailHelpId" placeholder="email">
-        <input type="password" class="form-control" name="passwordField" id="passwordField" aria-describedby="passwordHelpId" placeholder="password">
-        <small id="loginHelp" class="form-text text-muted"></small>
-        <button onclick="login()">Login</button>
-      </div>
+      <form id="formCont">
+        <p>Welcome back</p>
+        <input type="email" class="form-control" name="emailField" id="emailField" aria-describedby="emailHelpId"
+          placeholder="email" required>
+        <input type="password" class="form-control" name="passwordField" id="passwordField"
+          aria-describedby="passwordHelpId" placeholder="password" required>
+        <div>
+          <button onclick="login()">Login</button>
+        </div>
+        <div id="register">
+          Need an account?
+          <a onclick="signupShow()" href="#signup">Register</a>
+        </div>
+      </form>
     </div>
   </div>
   <!-- <footer>
   </footer> -->
 
   <!-- Optional JavaScript -->
-  <script src="scripts/login.js"></script>
+  
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- ! DO NOT REMOVE ! -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -71,6 +79,9 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <!-- jQuery Scripts -->
+  <script src="scripts/login.js">
+  </script>
 </body>
 
 </html>
