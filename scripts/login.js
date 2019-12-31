@@ -23,42 +23,68 @@
 //     }
 // });
 
-
 function login() {
 
-    var userEmail = document.getElementById('emailField').value;
-    var userPass = document.getElementById('passwordField').value;
+    var email = document.getElementById('emailField').value;
+    var password = document.getElementById('pass wordField').value;
 
-    if(userEmail != null && userPass != null) {
-        firebase.auth().signInWithEmailAndPassword(userEmail, userPass).then(function () {
+    if (email && password) {
+        firebase.auth().signInWithEmailAndPassword(email, password).then(function () {
             location.href = 'home.html';
         }).catch(function (error) {
             // Handle Errors here.
             var errorCode = error.code;
             var errorMessage = error.message;
-    
+
             // window.alert('Error : ' + errorMessage);
             // document.getElementById('loginHelp').innerText = 'Error : ' + errorMessage;
             // ...
         });
-    }  
+    }
 
 }
 
 function signup() {
+    var firstName = document.getElementById('firstNameField').value;
+    var lastName = document.getElementById('lastNameField').value;
     var email = document.getElementById('emailField').value;
     var password = document.getElementById('passwordField').value;
 
-    firebase.auth().createUserWithEmailAndPassword(email, password).catch(function (error) {
-        // Handle Errors here.
-        var errorCode = error.code;
-        var errorMessage = error.message;
-        // ...
-        console.log(errorCode, ' =>', errorMessage);
-    });
+    if (email && password) {
+        firebase.auth().createUserWithEmailAndPassword(email, password).then(function () {
+            alert("Sign in successful");
+            login();
+        }).catch(function (error) {
+            // Handle Errors here.
+            var errorCode = error.code;
+            var errorMessage = error.message;
+            // ...
+            console.log(errorCode, ' =>', errorMessage);
+            if (errorMessage.contains("email address is already in use")) {
+                
+            }
+        });
+    }
 
     console.log('logged in');
-    
+}
+
+function addData(dataType, data) {
+    firebase.auth().onAuthStateChanged(function (user) {
+
+        // if the current user logged in user
+        // is authenticated, then grab "uid" "displayName" and "email"
+        // use "set()" with merge (if document did not exist it will be created)
+        if (user) {
+            console.log("Signed in");
+            db.collection("users").doc(user.uid).set({
+                dataType : data
+            }, { merge: true });
+
+        } else {
+            console.log("Not signed in");
+        }
+    });
 }
 
 function signupShow() {
@@ -72,9 +98,8 @@ function signupShow() {
       <button onclick='signup()'>Signup</button>\
     </div>\
     <div id='register'>\
-      Already have an account?\
-      <a onclick='loginShow()' href='#login'>Login</a>\
-    </div>"
+      <a onclick='loginShow()' href='#login'>Sign in to an existing account</a>\
+    </div>";
 
     var cont = $('#formCont');
     cont.empty();
@@ -92,7 +117,7 @@ function loginShow() {
     <div id='register'>\
       Already have an account?\
       <a onclick='signupShow()' href='#signup'>Login</a>\
-    </div>"
+    </div>";
 
     var cont = $('#formCont');
     cont.empty();
