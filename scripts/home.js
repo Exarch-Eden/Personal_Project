@@ -121,9 +121,6 @@ function getSubscribedThreads() {
                         console.log('no current subscriptions');   
                     }
                 } else {
-                    // html for button to redirect to unsubbed threads page
-                    var redirectButton = "<button type='button' id='redirectButton' class='btn btn-primary'>Let's look for some threads!</button>";
-
                     // card to indicate the user has no subbed threads
                     var noSubs = "<div id='noSubsCard' class='card'>\
                     <div class='card-body'>\
