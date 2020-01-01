@@ -101,7 +101,9 @@ function getRecentThreads() {
     })
 }
 
-// gets threads from the user's subscriptions
+/* 
+    gets threads from the user's subscriptions
+*/
 function getSubscribedThreads() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
@@ -119,6 +121,23 @@ function getSubscribedThreads() {
                         console.log('no current subscriptions');   
                     }
                 } else {
+                    // html for button to redirect to unsubbed threads page
+                    var redirectButton = "<button type='button' id='redirectButton' class='btn btn-primary'>Let's look for some threads!</button>";
+
+                    // card to indicate the user has no subbed threads
+                    var noSubs = "<div id='noSubsCard' class='card'>\
+                    <div class='card-body'>\
+                        <!-- title of thread -->\
+                        <h5 class='card-title'>" + "Uh oh!" + "</h5>\
+                        <!-- content of thread -->\
+                        <p class='card-text'>" + "It appears you aren't subscribed to any threads!" + "</p>\
+                        </div>\
+                        <button type='button' id='redirectButton' class='btn btn-primary'>\
+                        Let's look for some threads!\
+                        </button>\
+                    </div>";
+
+                    contents.append(noSubs);
                     console.log('document does not exist');
                 }
             }).catch(function(error) {

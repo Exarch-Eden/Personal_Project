@@ -58,9 +58,9 @@ function goToNotes() {
     headerCon.html("Notes");
     contents.empty();
 
-    //add code here to show notes posted by the user
+    // add code here to show notes posted by the user
 
-    //code to show the post creation modal
+    // code to show the post creation modal
     showModal();
 }
 
