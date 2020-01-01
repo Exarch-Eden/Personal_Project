@@ -56,10 +56,28 @@
         <div>
           <button onclick="login()">Login</button>
         </div>
-        <div id="register">
+        <!-- <div class="register">
           Need an account?
           <a onclick="signupShow()" href="#signup">Register</a>
+        </div> -->
+      </form>
+      <form id="signupCont">
+        <p>Create your account</p>
+        <input type='text' class='form-control' name='firstNameField' id='firstNameField'
+          aria-describedby='firstNameHelpId' placeholder='first name' required>
+        <input type='text' class='form-control' name='lastNameField' id='lastNameField'
+          aria-describedby='lastNameHelpId' placeholder='last name' required>
+        <input type='email' class='form-control' name='emailField' id='emailSignupField' aria-describedby='emailHelpId'
+          placeholder='email' required>
+        <input type='password' class='form-control' name='passwordSignupField' pattern='[A-Za-z0-9]{8,16}'
+          id='passwordSignupField' aria-describedby='passwordHelpId' placeholder='password' required>
+        <small id='loginHelp' class='form-text text-muted'></small>
+        <div>
+          <button onclick='signup()'>Signup</button>
         </div>
+        <!-- <div class='register'>
+          <a onclick='loginShow()' href='#login'>Sign in to an existing account</a>
+        </div> -->
       </form>
     </div>
   </div>
@@ -67,7 +85,7 @@
   </footer> -->
 
   <!-- Optional JavaScript -->
-  
+
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
   <!-- ! DO NOT REMOVE ! -->
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
