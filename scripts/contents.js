@@ -11,12 +11,27 @@ function include(file) {
 
 }
 
+firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+        console.log("name is", user.displayName);
+        // db.collection("user").doc(user.uid).set({
+        //     name: "name",
+        //     email: user.email,
+        //     reputation: 0
+        // }, { merge: true });
+    } else {
+        // No user is signed in.
+        console.log('no user signed in');
+        // document.getElementById('user_div').style.display = 'none';
+        // document.getElementById('login_div').style.display = 'block';
+
+    }
+});
 
 // page format data
 include("scripts/data.js");
 include("scripts/home.js");
 include("scripts/notes.js");
-
 // navigation click events
 function goToProfile() {
     console.log("profile clicked");
@@ -94,6 +109,6 @@ $("#noteItem").click(function () {
 
 // SETTINGS
 $("#settingsItem").click(function () {
-    goToSettings();
+    logout();
 });
 
