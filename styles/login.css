@@ -7,9 +7,43 @@
     align-content: center;
 }
 
-#formCont {
-    background-color: white;
-    width: 400px;
-    display: inline;
+#formCont, #signupCont {
+    background-color: rgb(50, 68, 128);
+    align-self: center;
+    text-align: center;
+    width: 40vh;
+    height: auto;
+    border-radius: 10%;
+    padding: 5vh;
+    margin: 0 3vh;
+}
+
+#formCont p, #signupCont p{
+    font-size: 3vh;
+    color: white;
+}
+
+#formCont input, #signupCont input {
+    margin: 1vh 0;
+}
+
+#formCont div, #signupCont div {
+    width: 100%;
+}
+
+#formCont div button, #signupCont div button{
+    width: 100%;
+    background-color: rgb(61, 61, 218);
+    padding: 1vh;
+    font-size: 2vh;
+    color: white;
+    border-radius: 1vh;
+    border: none;
+}
+
+#formCont .register, #signupCont .register {
+    font-size: 2vh;
+    padding: 1vh;
+    color: white;
 }
 

@@ -15,3 +15,6 @@
     background-color: aquamarine;
     padding : 2vw;
 }
+a:hover{
+    cursor: pointer;
+}
