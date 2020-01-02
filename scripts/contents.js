@@ -13,12 +13,13 @@ function include(file) {
 
 firebase.auth().onAuthStateChanged(function (user) {
     if (user) {
+        // testing purposes 
         console.log("name is", user.displayName);
-        // db.collection("user").doc(user.uid).set({
-        //     name: "name",
-        //     email: user.email,
-        //     reputation: 0
-        // }, { merge: true });
+
+        if(user.displayName) {
+            $('#headerCont').html("Welcome back " + user.displayName);
+        }
+        
     } else {
         // No user is signed in.
         console.log('no user signed in');
