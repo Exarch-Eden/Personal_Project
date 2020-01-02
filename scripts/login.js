@@ -24,72 +24,86 @@ function signup() {
     let password = document.getElementById('passwordSignupField').value;
     let name = firstName + " " + lastName;
 
-    // Create user with email and pass.
-    // [START createwithemail]
-    firebase.auth().createUserWithEmailAndPassword(email, password)
-        .then(function () {
-            // Sign in newly created user
-            firebase.auth().signInWithEmailAndPassword(email, password)
+    // Check for errors in inputs
+    if (!(firstName === "") && !(lastName === "") && !(email === "") && !(password === "")) {
+        // Check if email is the right format
+        if (email.includes('@gmail.com')) {
+
+            // Create user with email and pass.
+            // [START createwithemail]
+            firebase.auth().createUserWithEmailAndPassword(email, password)
                 .then(function () {
-                    // get current user
-                    var user = firebase.auth().currentUser;
-                    
-                    // add initial data to firebase database
-                    var userDoc = db.collection('user').doc(user.uid);
-                    console.log(user);
-                    userDoc.set({
-                        first_name: firstName,
-                        last_name : lastName,
-                        email: user.email,
-                        userID: user.uid,
-                        reputation : 0,
-                        subscriptions : []
-                    });
+                    // Sign in newly created user
+                    firebase.auth().signInWithEmailAndPassword(email, password)
+                        .then(function () {
+                            // get current user
+                            var user = firebase.auth().currentUser;
 
-                    // for testing purposes
-                    alert("Profile creation done");
+                            // add initial data to firebase database
+                            var userDoc = db.collection('user').doc(user.uid);
+                            console.log(user);
+                            userDoc.set({
+                                first_name: firstName,
+                                last_name: lastName,
+                                email: user.email,
+                                userID: user.uid,
+                                reputation: 0,
+                                subscriptions: []
+                            });
 
-                    // update main profile data
-                    user.updateProfile({
-                        displayName: name,
-                    }).then(function () {
+                            // for testing purposes
+                            alert("Profile creation done");
 
-                        // enter home page
-                        location.href = 'home.html';
+                            // update main profile data
+                            user.updateProfile({
+                                displayName: name,
+                            }).then(function () {
 
-                        
-                    }).catch(function (error) {
-                        // an error occured
-                    });
-                }).catch(function (error) {
+                                // enter home page
+                                location.href = 'home.html';
+
+
+                            }).catch(function (error) {
+                                // an error occured
+                            });
+                        }).catch(function (error) {
+                            // Handle Errors here.
+                            var errorCode = error.code;
+                            var errorMessage = error.message;
+                            // [START_EXCLUDE]
+                            if (errorCode === 'auth/wrong-password') {
+                                alert('Wrong password.');
+                            } else {
+                                alert(errorMessage);
+                            }
+                            console.log(error);
+                            document.getElementById('quickstart-sign-in').disabled = false;
+                            // [END_EXCLUDE]
+                        });
+                })
+                .catch(function (error) {
                     // Handle Errors here.
                     var errorCode = error.code;
                     var errorMessage = error.message;
                     // [START_EXCLUDE]
-                    if (errorCode === 'auth/wrong-password') {
-                        alert('Wrong password.');
+                    if (errorCode == 'auth/weak-password') {
+                        alert('The password is too weak.');
                     } else {
                         alert(errorMessage);
                     }
                     console.log(error);
-                    document.getElementById('quickstart-sign-in').disabled = false;
                     // [END_EXCLUDE]
                 });
-        })
-        .catch(function (error) {
-            // Handle Errors here.
-            var errorCode = error.code;
-            var errorMessage = error.message;
-            // [START_EXCLUDE]
-            if (errorCode == 'auth/weak-password') {
-                alert('The password is too weak.');
-            } else {
-                alert(errorMessage);
-            }
-            console.log(error);
-            // [END_EXCLUDE]
-        });
-    // [END createwithemail]
+            // [END createwithemail]
+
+        } else {
+
+            // testing
+            alert('email must end with @gmail.com');
+        }
+
+
+    }
 }
 
 
