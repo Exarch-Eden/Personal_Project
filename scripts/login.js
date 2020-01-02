@@ -19,7 +19,9 @@ function login() {
 
 function signup() {
     let firstName = document.getElementById('firstNameField').value;
+    firstName = firstName.charAt(0).toUpperCase() + firstName.substring(1).toLowerCase();
     let lastName = document.getElementById('lastNameField').value;
+    lastName = lastName.charAt(0).toUpperCase() + lastName.substring(1).toLowerCase();
     let email = document.getElementById('emailSignupField').value;
     let password = document.getElementById('passwordSignupField').value;
     let name = firstName + " " + lastName;
@@ -49,23 +51,24 @@ function signup() {
                                 userID: user.uid,
                                 reputation: 0,
                                 subscriptions: []
-                            });
+                            }, { merge: true })
+                                .then(function () {
+                                    // for testing purposes
+                                    alert("Profile creation done");
 
-                            // for testing purposes
-                            alert("Profile creation done");
+                                    // update main profile data
+                                    user.updateProfile({
+                                        displayName: name,
+                                    }).then(function () {
 
-                            // update main profile data
-                            user.updateProfile({
-                                displayName: name,
-                            }).then(function () {
-
-                                // enter home page
-                                location.href = 'home.html';
+                                        // enter home page
+                                        location.href = 'home.html';
 
 
-                            }).catch(function (error) {
-                                // an error occured
-                            });
+                                    }).catch(function (error) {
+                                        // an error occured
+                                    });
+                                });
                         }).catch(function (error) {
                             // Handle Errors here.
                             var errorCode = error.code;
