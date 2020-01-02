@@ -29,7 +29,7 @@
 
   <!-- ? OTHER FILES -->
   <!-- JavaScript -->
-
+  <script src="scripts/login.js"></script>
   <!-- CSS -->
   <link rel="stylesheet" href="styles/layout1.css">
   <link rel="stylesheet" href="styles/login.css">
@@ -47,7 +47,7 @@
   </header>
   <div id="content">
     <div id="loginCont">
-      <form id="formCont">
+      <div id="formCont">
         <p>Welcome back</p>
         <input type="email" class="form-control" name="emailField" id="emailField" aria-describedby="emailHelpId"
           placeholder="email" required>
@@ -60,25 +60,25 @@
           Need an account?
           <a onclick="signupShow()" href="#signup">Register</a>
         </div> -->
-      </form>
-      <form id="signupCont">
+      </div>
+      <div id="signupCont">
         <p>Create your account</p>
         <input type='text' class='form-control' name='firstNameField' id='firstNameField'
           aria-describedby='firstNameHelpId' placeholder='first name' required>
         <input type='text' class='form-control' name='lastNameField' id='lastNameField'
           aria-describedby='lastNameHelpId' placeholder='last name' required>
-        <input type='email' class='form-control' name='emailField' id='emailSignupField' aria-describedby='emailHelpId'
+        <input type='email' class='form-control' name='emailSignupField' id='emailSignupField' aria-describedby='emailHelpId'
           placeholder='email' required>
         <input type='password' class='form-control' name='passwordSignupField' pattern='[A-Za-z0-9]{8,16}'
           id='passwordSignupField' aria-describedby='passwordHelpId' placeholder='password' required>
         <small id='loginHelp' class='form-text text-muted'></small>
         <div>
-          <button onclick='signup()'>Signup</button>
+          <button type='submit' onclick='signup()'>Signup</button>
         </div>
         <!-- <div class='register'>
           <a onclick='loginShow()' href='#login'>Sign in to an existing account</a>
         </div> -->
-      </form>
+      </div>
     </div>
   </div>
   <!-- <footer>
@@ -98,7 +98,7 @@
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
   <!-- jQuery Scripts -->
-  <script src="scripts/login.js">
+  
   </script>
 </body>
 
