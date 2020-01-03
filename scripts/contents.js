@@ -1,3 +1,4 @@
+
 var contents = $("#mainContent");
 var headerCon = $("#headerCont");
 function include(file) {
@@ -11,28 +12,12 @@ function include(file) {
 
 }
 
-firebase.auth().onAuthStateChanged(function (user) {
-    if (user) {
-        // testing purposes 
-        console.log("name is", user.displayName);
-
-        if(user.displayName) {
-            $('#headerCont').html("Welcome back " + user.displayName);
-        }
-        
-    } else {
-        // No user is signed in.
-        console.log('no user signed in');
-        // document.getElementById('user_div').style.display = 'none';
-        // document.getElementById('login_div').style.display = 'block';
-
-    }
-});
-
 // page format data
 include("scripts/data.js");
-include("scripts/home.js");
+include("scripts/thread-manager.js");
+include("scripts/user-data.js");
 include("scripts/notes.js");
+
 // navigation click events
 function goToProfile() {
     console.log("profile clicked");
@@ -45,7 +30,11 @@ function goToHome() {
     headerCon.html("Home");
     contents.empty();
     console.log(homeData);
-    
+
+    // code to show the post creation modal
+    showModal();
+
+    // post all subscribed threads recent posts
     for (var i = 0; i < homeData.length; i++) {
         var template = "<div class='card'>\
     <div class='card-body'>\
@@ -59,13 +48,19 @@ function goToHome() {
     </div>"
         contents.append(template);
     }
-    getRecentThreads;
+
+    getRecentThreads();
 }
 
 function goToThreads() {
     console.log("threads clicked");
     headerCon.html("Threads");
     contents.empty();
+
+    // code to show the post creation modal
+    showModal();
+
+    // show a specific subscribed thread's recent posts
     getSubscribedThreads();
 }
 
@@ -76,8 +71,7 @@ function goToNotes() {
 
     // add code here to show notes posted by the user
 
-    // code to show the post creation modal
-    showModal();
+    
 }
 
 function goToSettings() {
