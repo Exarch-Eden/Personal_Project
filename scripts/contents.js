@@ -1,4 +1,12 @@
 
+// [START TEMPORARY EVENT]
+
+$("#skipSub").click(function () {
+    $('#fullCover').hide();
+});
+
+
+// [END TEMPORARY EVENT]
 var contents = $("#mainContent");
 var headerCon = $("#headerCont");
 function include(file) {

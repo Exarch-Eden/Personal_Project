@@ -13,9 +13,9 @@ firebase.auth().onAuthStateChanged(function (user) {
         .then(function(doc) {
             if(doc.exists) {
                 if(doc.data().subscriptions.length <= 0) {
-                    location.href = 'force-subscription.html';
+                    // location.href = 'force-subscription.html';
                 } else {
-                    $('#screenCover').hide();
+                    // $('#screenCover').hide();
                 }
             } else {
 
